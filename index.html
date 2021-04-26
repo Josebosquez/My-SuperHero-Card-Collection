@@ -1,16 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" ref="style.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <div class="title">
         My SuperHero Card Collection
     </div>
+    <div class="mainContainer">
+        <div class="apiReq">
+            <fieldset>
+                <legend>Insert Character Name</legend>
+                <input id="APIKey" type="text" placeholder="Enter Token">
+                <br>
+                <br>
+                <input id="inpKey" type="text" placeholder="Enter Name...">
+                <br>
+                <br>
+                <input id="inpValue" type="text" placeholder="Enter Value...">
+                <br>
+                <br>
+                <button type="button" id="btnInsert">Enter</button>
+            </fieldset>
+            <fieldset>
+                <legend>History</legend>
+                <div id="Output"></div>
+            </fieldset>
+        </div>
+
+
+        <div class="collection">
+
+        </div>
+
+
+        <div class="cardInfo">
+
+        </div>
+    </div>
 </body>
 <script src="main.js"></script>
+
 </html>

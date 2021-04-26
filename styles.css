@@ -1,0 +1,36 @@
+body{
+    background-color: black;
+}
+
+.title{
+    color: blue;
+    font-size: 40px;
+    display: flex;
+    justify-content: center;
+}
+.mainContainer{
+    display: flex;
+    border: 1px solid red;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.apiReq {
+    border:1px solid blue;
+    width: 30%;
+    color: white;
+}
+#legend{
+    border: 1px solid white;
+}
+
+.collection{
+    width: 30%;
+    border: 1px solid blue;
+}
+
+.cardInfo{
+    border: 1px solid blue;
+    width: 30%;
+}
