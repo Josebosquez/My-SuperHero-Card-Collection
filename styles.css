@@ -48,6 +48,7 @@ body{
 .row{
     border: 1px solid #555555;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-content: center;
     text-align: center;
@@ -62,7 +63,6 @@ body{
     width: 30%;
     border: 1px solid #555555;
 }
-
 
 .cardInfo{
     border: 1px solid #555555;
