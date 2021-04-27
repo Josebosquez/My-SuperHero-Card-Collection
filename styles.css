@@ -17,24 +17,16 @@ body{
     background-color: #222222;
 }
 
-#legend{
+#legend {
     border: 1px solid #555555;
     color: lightslategray;
-}
-#inpKey{
-    color: lightslategray;
-
-    border-style: inset;
-
+    margin: 10px;
 }
 
-.apiReq {
+.apiReq, #box {
     border:1px solid #555555;
     width: 30%;
-}
-
-#legend{
-    border: 1px solid #555555;
+    margin: 5px;
 }
 
 .collection{
@@ -43,6 +35,7 @@ body{
     width: 30%;
     border: 1px solid #555555;
     color: lightslategray;
+    margin: 10px;
 }
 
 .row{
@@ -59,13 +52,57 @@ body{
     height: 6em;
 }
 
-#box{
-    width: 30%;
-    border: 1px solid #555555;
-}
-
 .cardInfo{
     border: 1px solid #555555;
+    margin: 10px;
     width: 30%;
+    height: 500px;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    -webkit-background-size: cover; 
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    flex-direction: column; 
+    opacity: 100%;
 }
 
+.cardEdge {
+    height: 100%;
+    width: 100%;
+    color: white;
+}
+
+#photo{
+    opacity: 40%;
+    height: 100%;
+    background-image: url(https://www.superherodb.com/pictures2/portraits/10/100/1305.jpg);
+    align-content: center;
+    align-items: center;
+    display: flex;
+    -webkit-background-size: cover; 
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    flex-direction: column; 
+}
+.top {
+    margin-top: -485px;
+    margin-inline-start: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+#durability{
+    margin-top: -20px;
+    margin-left: 350px;
+    margin-inline-end: 20px;
+}
+.middle{
+    margin-top: 300px;
+    margin-inline-start: 20px;
+    display: flex;
+    flex-direction: column;
+}
