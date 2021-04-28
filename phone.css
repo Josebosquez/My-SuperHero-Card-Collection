@@ -1,0 +1,78 @@
+/* ---------------mobile------------- */
+@media screen and (max-width: 700px) {
+    .title{
+        color: blue;
+        font-size: 30px;
+        display: flex;
+        justify-content: center;
+    }
+    
+    #legend {
+        margin: 1px;
+        font-size: 10px;
+        width: 100px;
+    }
+    
+    .apiReq, #box {
+        width: 20%;
+        margin: 1px;
+    }
+    
+    #APIKey, #inpKey, #inpValue, #btnInsert, #btnClear{
+        width: 100px;
+        font-size: 10px;
+    }
+
+    .collection, h1{
+        width: 20%;
+        font-size: 20px;
+        margin: 5px;
+    }
+    
+    #thumbnails{
+        width: 100%;
+        height: 3em;
+    }
+    
+    .cardInfo{
+        margin: 1px;
+        width: 60%;
+        height: 500px;
+    }
+    
+    .cardEdge {
+        height: 100%;
+        width: 100%;
+    }
+    
+    #photo{
+        opacity: 40%;
+        height: 100%;
+        background-image: url(https://www.superherodb.com/pictures2/portraits/10/100/1305.jpg);
+        align-content: center;
+        align-items: center;
+        display: flex;
+        -webkit-background-size: cover; 
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        flex-direction: column; 
+    }
+    .top {
+        margin-top: -485px;
+        margin-inline-start: 20px;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    #durability{
+        margin-top: -20px;
+        margin-left: 250px;
+        margin-inline-end: 20px;
+    }
+    .middle{
+        margin-top: 300px;
+        margin-inline-start: 20px;
+        display: flex;
+        flex-direction: column;
+    }
