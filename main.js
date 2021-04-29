@@ -8,7 +8,7 @@ let arr = [];
 let superheroArr = [];
 
 function APIcall() {
-    for (let i = 1; i < 5; i++) {
+    for (let i = 1; i < 10; i++) {
         let URL = `https://superheroapi.com/api/3935852106501451/${i}`
         arr.push(axios.get(URL))
     }
@@ -32,6 +32,8 @@ let charName;
 let charImage;
 let collectionArr = [];
 let storedURLs = JSON.parse(localStorage.getItem('collectionArr'));
+
+console.log(localStorage.getItem("collectionArr"))
 console.log(storedURLs)
 console.log(collectionArr)
 
@@ -42,12 +44,11 @@ btnInsert.onclick = function () {
             charName = superheroArr[i].name;
             charImage = superheroArr[i].image.url
             let supe = superheroArr[i];
-
+            
             collectionArr.push(supe)
-            console.log(supe)
-            localStorage.setItem("collectionArr", JSON.stringify(collectionArr))
         }
     }
+    localStorage.setItem("collectionArr", JSON.stringify(collectionArr))
     localStorage.setItem("name", charName )
     localStorage.setItem("image", charImage )
     createHTML(charImage, charName)
@@ -57,11 +58,12 @@ btnInsert.onclick = function () {
 // Create DOM element for collection
 //------------
 function createHTML(img, name) {
-let html = `
+    let html = `
     <div id="box"><img id="thumbnails" onclick="clickedThumb()" src = "${img}">${name}</div>`
     row.innerHTML += html;
 }
-if(storedURLs.length !== 0){
+if(storedURLs !== null){
+    collectionArr = JSON.parse(localStorage.getItem('collectionArr')).map(x => x);
     for (i=0; i < storedURLs.length; i++){
         createHTML(storedURLs[i].image.url, storedURLs[i].name)
         console.log(storedURLs[i].name)
