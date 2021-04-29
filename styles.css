@@ -78,7 +78,7 @@ body{
 #photo{
     opacity: 40%;
     height: 100%;
-    background-image: url(https://www.superherodb.com/pictures2/portraits/10/100/1305.jpg);
+    /* background-image: url(https://www.superherodb.com/pictures2/portraits/10/100/1305.jpg); */
     align-content: center;
     align-items: center;
     display: flex;

@@ -28,27 +28,59 @@ function APIcall() {
 // } xForce()
 
 
-
-
 let charName;
 let charImage;
+let collectionArr = [];
+let storedURLs = JSON.parse(localStorage.getItem('collectionArr'));
+console.log(storedURLs)
+console.log(collectionArr)
+
 btnInsert.onclick = function () {
     for (i = 0; i < superheroArr.length;i++){
         if (superheroArr[i].name === inpName.value){
             console.log("hello")
             charName = superheroArr[i].name;
             charImage = superheroArr[i].image.url
-            console.log(charName)
-            console.log(charImage)
+            let supe = superheroArr[i];
+
+            collectionArr.push(supe)
+            console.log(supe)
+            localStorage.setItem("collectionArr", JSON.stringify(collectionArr))
         }
     }
-    function createHTML() {
-    let html = `
-        <div id="box"><img id="thumbnails" src = "${charImage}">${charName}</div>`
-        row.innerHTML += html;
-        }
-        createHTML()
+    localStorage.setItem("name", charName )
+    localStorage.setItem("image", charImage )
+    createHTML(charImage, charName)
 }
+
+//------------
+// Create DOM element for collection
+//------------
+function createHTML(img, name) {
+let html = `
+    <div id="box"><img id="thumbnails" onclick="clickedThumb()" src = "${img}">${name}</div>`
+    row.innerHTML += html;
+}
+if(storedURLs.length !== 0){
+    for (i=0; i < storedURLs.length; i++){
+        createHTML(storedURLs[i].image.url, storedURLs[i].name)
+        console.log(storedURLs[i].name)
+    }
+}
+
+//------------
+// Click on an image to get the card 
+//------------
+const thumbnails = document.querySelector("thumbnails")
+const photo = document.getElementById("photo")
+
+function clickedThumb(){
+    photo.style.backgroundImage = `url(${charImage})`
+    console.log("photo clicked")
+}
+clickedThumb()
+
+
 
 //     const key = inpKey.value;
 //     const value = inpName.value;
