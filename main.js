@@ -1,12 +1,14 @@
+//------------
+//Query the buttons and areas where i want to display dom elements.
+//------------
 const apiKey = document.getElementById("APIKey")
 const inpKey = document.getElementById("inpKey")
 const inpName = document.getElementById("inpID")
 const btnInsert = document.getElementById("btnInsert")
-const Output = document.getElementById("Output")
 let row = document.querySelector(".row")
-//-----------
+//------------
 //Query the card stats
-//-----------
+//------------
 const species = document.getElementById("species");
 const nametoprow = document.getElementById("nametoprow");
 const durability = document.getElementById("durability")
@@ -16,9 +18,9 @@ const power = document.getElementById("power")
 const speed = document.getElementById("speed")
 const strength = document.getElementById("strength")
 
-//-----------
+//------------
 //Query the back card stats
-//-----------
+//------------
 const appearance = document.querySelector(".appearance")
 const biography = document.querySelector(".biography")
 const eyecolor = document.getElementById("eyecolor")
@@ -33,11 +35,12 @@ const race = document.getElementById("race")
 const occupation = document.getElementById("occupation")
 const base = document.getElementById("base")
 
-//-----------
+//-------------
 // API CALL arrays
-//-----------
+//-------------
 let arr = [];
 let superheroArr = [];
+
 
 function APIcall() {
     for (let i = 1; i < 732; i++) {
@@ -49,7 +52,13 @@ function APIcall() {
             superheroArr.push(res.data)
         })
     ).catch((err) => console.log(err));
+
+    if (superheroArr.length === 731){
+        btnInsert.style.background = "green"
+        btnClear.style.background = "red"
+    } console.log(superheroArr)
 } APIcall()
+
 
 
 //loading screen to grab api
@@ -63,16 +72,16 @@ let charImage;
 let collectionArr = [];
 let storedURLs = JSON.parse(localStorage.getItem('collectionArr'));
 
-//------------
+//-------------
 //Call for a hero using their name.
-//------------
+//-------------
 
 btnInsert.onclick = function () {
     for (i = 0; i < superheroArr.length;i++){
         if (superheroArr[i].name === inpName.value){
-            //-----
+            //-------------
             // Card stats
-            //-----
+            //-------------
             species.innerHTML = `Race: ${superheroArr[i].appearance.race}`
             console.log(species)
             nametoprow.innerHTML = `Name: ${superheroArr[i].name}`
@@ -82,9 +91,9 @@ btnInsert.onclick = function () {
             power.innerHTML = `Power: ${superheroArr[i].powerstats.power}`
             speed.innerHTML =`Speed: ${superheroArr[i].powerstats.speed}`
             strength.innerHTML = `Strength: ${superheroArr[i].powerstats.strength}`
-            //-----
+            //-------------
             // Back of card stats
-            //-----
+            //-------------
             gender.innerHTML = `Gender: ${superheroArr[i].appearance.gender}`
             height.innerHTML = `Height: ${superheroArr[i].appearance.height}`
             weight.innerHTML = `Weight: ${superheroArr[i].appearance.weight}`
@@ -95,9 +104,9 @@ btnInsert.onclick = function () {
             publisher.innerHTML = `Publisher: ${superheroArr[i].biography.publisher}`; 
             occupation.innerHTML = `Occupation: ${superheroArr[i].work.occupation}`;  
             base.innerHTML = `Base: ${superheroArr[i].work.base}`;  
-            //-----
+            //-------------
             // Image and name stats
-            //-----
+            //-------------
             charName = superheroArr[i].name;
             charImage = superheroArr[i].image.url
             photo.style.backgroundImage = `url(${charImage})`
@@ -105,20 +114,20 @@ btnInsert.onclick = function () {
             collectionArr.push(supe)
             console.log(charImage)
         }
-    }console.log(species)
+    }
 
-//------------
+//-------------
 //---- set local storage and collection image and name
-//------------
+//-------------
     localStorage.setItem("collectionArr", JSON.stringify(collectionArr))
     localStorage.setItem("name", charName )
     localStorage.setItem("image", charImage )
     createHTML(charImage, charName)
     console.log(collectionArr)
 }
-//------------
+//-------------
 // Create DOM element for collection
-//------------
+//-------------
 function createHTML(img, name) {
     let html = `<div id="box"><img id="thumbnails" src="${img}">${name}</div>`
     row.innerHTML += html;
@@ -130,11 +139,9 @@ if(storedURLs !== null){
         createHTML(storedURLs[i].image.url, storedURLs[i].name)
     }
 }
-
-
+//-------------
 // clearing the local storage and the history
-const btnClear = document.getElementById("btnClear");
-
+//-------------
 btnClear.addEventListener('click', function () {
     localStorage.clear();
     location.reload()
