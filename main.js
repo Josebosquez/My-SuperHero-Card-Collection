@@ -7,7 +7,7 @@ let row = document.querySelector(".row")
 //-----------
 //Query the card stats
 //-----------
-let species = document.getElementById("species");
+const species = document.getElementById("species");
 const nametoprow = document.getElementById("nametoprow");
 const durability = document.getElementById("durability")
 const combat = document.getElementById("combat")
@@ -29,6 +29,8 @@ const weight = document.getElementById("weight")
 const aliases = document.getElementById("aliases")
 const alignment = document.getElementById("alignment")
 const publisher = document.getElementById("publisher")
+const race = document.getElementById("race")
+const occupation = document.getElementById("occupation")
 
 //-----------
 // API CALL arrays
@@ -72,6 +74,7 @@ btnInsert.onclick = function () {
             // Card stats
             //-----
             species.innerHTML = `Race: ${superheroArr[i].appearance.race}`
+            console.log(species)
             nametoprow.innerHTML = `Name: ${superheroArr[i].name}`
             durability.innerHTML = `Health: ${superheroArr[i].powerstats.durability}`
             combat.innerHTML = `Combat: ${superheroArr[i].powerstats.combat}`
@@ -82,9 +85,15 @@ btnInsert.onclick = function () {
             //-----
             // Back of card stats
             //-----
+            gender.innerHTML = `Gender: ${superheroArr[i].appearance.gender}`
+            height.innerHTML = `Height: ${superheroArr[i].appearance.height}`
+            weight.innerHTML = `Weight: ${superheroArr[i].appearance.weight}`
+            
+            race.innerHTML = `Race: ${superheroArr[i].appearance.race}`
             aliases.innerHTML = `Aliases: ${superheroArr[i].biography.aliases}`;
             alignment.innerHTML = `Alignment: ${superheroArr[i].biography.alignment}`; 
             publisher.innerHTML = `Publisher: ${superheroArr[i].biography.publisher}`; 
+            occupation.innerHTML = `Occupation: ${superheroArr[i].work.occupation}`; 
             
             
 
@@ -97,22 +106,24 @@ btnInsert.onclick = function () {
             photo.style.backgroundImage = `url(${charImage})`
             let supe = superheroArr[i];
             collectionArr.push(supe)
+            console.log(charImage)
         }
-    }
-}
+    }console.log(species)
+
 //------------
-//---- set local storage
+//---- set local storage and collection image and name
 //------------
     localStorage.setItem("collectionArr", JSON.stringify(collectionArr))
     localStorage.setItem("name", charName )
     localStorage.setItem("image", charImage )
     createHTML(charImage, charName)
     console.log(collectionArr)
+}
 //------------
 // Create DOM element for collection
 //------------
 function createHTML(img, name) {
-    let html = `<div id="box"><img id="thumbnails" src = "${img}">${name}</div>`
+    let html = `<div id="box"><img id="thumbnails" src="${img}">${name}</div>`
     row.innerHTML += html;
 }
 

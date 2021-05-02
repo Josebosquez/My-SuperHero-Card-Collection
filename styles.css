@@ -29,11 +29,12 @@ body{
 }
 .apiReq, #box {
     border:1px solid #555555;
-    width: 15%;
+    width: 100%;
     margin: 5px;
 }
 
 .collection{
+    display: flex;
     justify-content:center;
     text-align: center;
     width: 80%;
@@ -72,12 +73,16 @@ body{
     flex-direction: column; 
     opacity: 100%;
 }
-
-.cardInfo, .backCardInfo{
+.backCardInfo{
     border: 1px solid #555555;
     margin: 10px;
     width: 30%;
     height: 500px;
+    font-size: 20px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
 }
 
 .cardEdge {
@@ -116,4 +121,10 @@ body{
     margin-inline-start: 20px;
     display: flex;
     flex-direction: column;
+}
+
+.appear, .bio, .work{
+    text-decoration: underline;
+    justify-content: space-between;
+    text-align: center;
 }
