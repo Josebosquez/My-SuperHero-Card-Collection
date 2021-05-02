@@ -16,49 +16,45 @@
         My SuperHero Card Collection
     </div>
     <div class="mainContainer">
-        <div class="apiReq">
-            <fieldset>
-                <legend id="legend">Insert Character Name</legend>
-                <input id="APIKey" type="text" placeholder="Enter Token...">
-                <br>
-                <br>
-                <input id="inpKey" type="text" placeholder="Enter Publisher...">
-                <br>
-                <br>
-                <input id="inpID" type="text" placeholder="Enter Name...">
-                <br>
-                <br>
-                <button type="button" id="btnInsert">Enter</button>
-            </fieldset>
-            <fieldset>
-                <legend id="legend">History</legend>
-                <div id="Output"></div>
-            </fieldset>
-        </div>
-        <!-- <iframe width="950" height="534" src="https://www.youtube.com/embed/PUq-KTkyw7o" title="YouTube video player"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen></iframe> -->
+        <div class="tophehe">
 
-
-        <div class="collection">
-            <div class="section">
-                <h1>
-                    Your Collection
-                </h1>
-                <div class="row">
-                </div>
+            <div class="apiReq">
+                <fieldset>
+                    <legend id="legend">Insert Character Name</legend>
+                    <input id="inpID" type="text" placeholder="Enter Name...">
+                    <br>
+                    <br>
+                    <button type="button" id="btnInsert">Enter</button>
+                    <button type="button" id="btnClear">Clear</button>
+                </fieldset>
             </div>
-        </div>
-
+            <!-- <iframe width="950" height="534" src="https://www.youtube.com/embed/PUq-KTkyw7o" title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe> -->
+                
+                
+                <div class="collection">
+                    <div class="section">
+                        <h1>
+                            Your Collection
+                        </h1>
+                        <div class="row">
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
 
         <div class="cardInfo">
             <div class="cardEdge">
                 <div id="photo"></div>
                 <div class="top">
-                    <div id="species">species</div>
-                    <div id="name">character</div>
-                    <div id="durability">health</div>
+                    <div id="species">race</div>
+                    <div id="top1">
+                        <div id="nametoprow">character</div>
+                        <div id="durability">health</div>
+                    </div>
                 </div>
                 <div class="middle">
                     <div id="combat">combat</div>
@@ -68,6 +64,24 @@
                     <div id="strength">strength</div>
                 </div>
             </div>
+        </div>
+
+        <div class="backCardInfo">
+            <div class="appearance">Appearance
+                <div id="eyecolor">Eye-color:</div>
+                <div id="gender">Gender</div>
+                <div id="haircolor">Hair-color</div>
+                <div id="height">Height</div>
+                <div id="species">Race</div>
+                <div id="weight">Weight</div>
+            </div>
+
+            <div class="biography">Biography:
+                <div id="aliases">Aliases</div>
+                <div id="alignment">Alignment</div>
+                <div id="publisher">Publisher</div>
+            </div>
+
         </div>
     </div>
 </body>

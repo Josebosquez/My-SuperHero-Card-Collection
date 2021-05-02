@@ -22,7 +22,11 @@ body{
     color: lightslategray;
     margin: 10px;
 }
-
+.tophehe{
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+}
 .apiReq, #box {
     border:1px solid #555555;
     width: 15%;
@@ -32,7 +36,7 @@ body{
 .collection{
     justify-content:center;
     text-align: center;
-    width: 30%;
+    width: 80%;
     border: 1px solid #555555;
     color: lightslategray;
     margin: 10px;
@@ -69,6 +73,13 @@ body{
     opacity: 100%;
 }
 
+.cardInfo, .backCardInfo{
+    border: 1px solid #555555;
+    margin: 10px;
+    width: 30%;
+    height: 500px;
+}
+
 .cardEdge {
     height: 100%;
     width: 100%;
@@ -95,10 +106,10 @@ body{
     flex-direction: column;
 }
 
-#durability{
-    margin-top: -20px;
-    margin-left: 350px;
+#top1{
     margin-inline-end: 20px;
+    display: flex;
+    justify-content: space-between;
 }
 .middle{
     margin-top: 300px;
