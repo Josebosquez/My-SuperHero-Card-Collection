@@ -20,9 +20,8 @@
     fieldset {
         width: 80%;
     }
-    .apiReq, #box {
-        width: 100%;
-        margin: 1px;
+    #box {
+    font-size: 10px;
     }
     
     #APIKey, #inpKey, #inpValue, #btnInsert, #btnClear{
@@ -84,9 +83,9 @@
         margin-inline-start: 20px;
         display: flex;
         flex-direction: column;
-    }
+    } 
 
-    #box {
-        font-size: 10px;
-        word-wrap: normal;
-    }
+.backCardInfo {
+    height: auto;
+    font-size: 15px;
+}

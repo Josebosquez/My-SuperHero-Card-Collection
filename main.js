@@ -31,6 +31,7 @@ const alignment = document.getElementById("alignment")
 const publisher = document.getElementById("publisher")
 const race = document.getElementById("race")
 const occupation = document.getElementById("occupation")
+const base = document.getElementById("base")
 
 //-----------
 // API CALL arrays
@@ -39,7 +40,7 @@ let arr = [];
 let superheroArr = [];
 
 function APIcall() {
-    for (let i = 1; i < 20; i++) {
+    for (let i = 1; i < 732; i++) {
         let URL = `https://superheroapi.com/api/3935852106501451/${i}`
         arr.push(axios.get(URL))
     }
@@ -61,7 +62,6 @@ let charName;
 let charImage;
 let collectionArr = [];
 let storedURLs = JSON.parse(localStorage.getItem('collectionArr'));
-console.log(storedURLs)
 
 //------------
 //Call for a hero using their name.
@@ -93,11 +93,8 @@ btnInsert.onclick = function () {
             aliases.innerHTML = `Aliases: ${superheroArr[i].biography.aliases}`;
             alignment.innerHTML = `Alignment: ${superheroArr[i].biography.alignment}`; 
             publisher.innerHTML = `Publisher: ${superheroArr[i].biography.publisher}`; 
-            occupation.innerHTML = `Occupation: ${superheroArr[i].work.occupation}`; 
-            
-            
-
-
+            occupation.innerHTML = `Occupation: ${superheroArr[i].work.occupation}`;  
+            base.innerHTML = `Base: ${superheroArr[i].work.base}`;  
             //-----
             // Image and name stats
             //-----
