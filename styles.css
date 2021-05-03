@@ -130,3 +130,48 @@ body{
     justify-content: space-between;
     text-align: center;
 }
+
+
+
+/* help search at the bottom of the page*/
+.helpSearch {
+    display: flex;
+    flex-wrap: wrap;
+    border: 1px solid #555555;
+}
+
+#left {
+    width: 20%;
+}
+
+#helpInput, #helpbtn{
+    width: 70%;
+}
+
+
+#right{
+    display: flex;
+    flex-wrap: wrap;
+    height: auto;
+    width: 80%;
+}
+
+#output{
+    justify-content: space-between;
+    word-wrap: normal;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    color: white;
+}
+
+#thumbnails{
+    width: 100%;
+}
+#box1{
+    width: 8%;
+    display: flex;
+    flex-direction: column;
+    align-content: flex-start;
+    text-align: start;
+}

@@ -36,6 +36,27 @@ const occupation = document.getElementById("occupation")
 const base = document.getElementById("base")
 
 //-------------
+// Search help feature and api call for it
+//-------------
+const helpInput = document.getElementById("helpInput")
+const helpbtn = document.getElementById("helpbtn")
+const output = document.getElementById("output")
+
+helpbtn.addEventListener("click", function () {
+    let URL = `https://superheroapi.com/api/3935852106501451/search/${helpInput.value}`
+    fetch(URL)
+    .then(response => response.json())
+    .then(data => data.results.map((item) => {
+            searchHTML(data)
+            function searchHTML() {
+                helpHTML = `<div id="box1"><img id="thumbnails" src="${item.image.url}">${item.name}</div>`
+                output.innerHTML += helpHTML;
+        }
+    }));
+}) 
+
+
+//-------------
 // API CALL arrays
 //-------------
 let arr = [];
